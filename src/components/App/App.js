@@ -1,5 +1,22 @@
+import AppHeader from "../AppHeader";
+import PostAddForm from "../PostAddForm/PostAddForm";
+import PostList from "../PostList";
+import PostStatusFilter from "../PostStatusFilter";
+import SearchPanel from "../SearchPanel";
+import "./App.css";
+
 const App = () => {
-  return <h1>Hello world</h1>;
+  return (
+    <div className="App">
+      <AppHeader />
+      <div className="search-panel d-flex">
+        <SearchPanel />
+        <PostStatusFilter />
+      </div>
+      <PostList />
+      <PostAddForm />
+    </div>
+  );
 };
 
 export default App;
