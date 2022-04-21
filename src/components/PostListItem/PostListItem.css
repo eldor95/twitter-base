@@ -26,4 +26,9 @@
   text-align: center;
   line-height: 35px;
   font-size: 16px;
+  display: none;
+}
+
+.like{
+  display: inline-block;
 }

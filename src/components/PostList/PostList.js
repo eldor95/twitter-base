@@ -1,14 +1,18 @@
 import "./PostList.css";
 import PostListItem from "../PostListItem";
 
-const PostList = () => {
-  return (
-    <ul className="app-list list-group">
-      <PostListItem label="Going to learn React JS" important />
-      <PostListItem label="That is so good" />
-      <PostListItem label="i need a beak..." />
-    </ul>
-  );
+const PostList = ({ posts, onDelete }) => {
+  const elements = posts.map((item) => {
+    const { id, ...itemProps } = item;
+
+    return (
+      <li key={id} className="list-group-item">
+        <PostListItem {...itemProps} onDelete={() => onDelete(id)} />
+      </li>
+    );
+  });
+
+  return <ul className="app-list list-group">{elements}</ul>;
 };
 
 export default PostList;
